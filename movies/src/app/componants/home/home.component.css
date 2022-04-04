@@ -1,0 +1,40 @@
+.bac{
+    background:rgba(0, 0, 0, 0) url("../../../assets/imags/homeback.jpg");
+    /* background-image: url("../../../assets/imags/homeback.jpg") ; */
+     background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.box{
+    background-color: rgba(43,43,49,0.7);
+    margin-top: 6%;
+}
+.arrow{
+        background-color: rgba(0,0,0,0);
+    border-color: #acacae;
+    color: #c2c0c2;
+}
+.cart{
+    background-color: rgba(0,0,0,0);
+        border-style: hidden;
+
+}
+.cart h4 {
+    color: white;
+}
+.cart p{
+    color: #ff559a;
+}
+.rat i{
+    color: #ff5868;
+}
+.rat span{
+    margin-left: 2%;
+    color: white;
+}
+
+.img{
+        border-radius: 10px;
+
+}
