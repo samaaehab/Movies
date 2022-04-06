@@ -1,6 +1,6 @@
 <div class="bac">
 <div class="box">
-        <section class="pt-5 pb-5">
+        <section class="pt-5 pb-2">
   <div class="container">
     <div class="row">
       <div class="col-6">
@@ -21,18 +21,23 @@
             <div class="carousel-item active" >
               <div class="row">
 
-                <div class="col-md-4 mb-3" >
+                <div class="col-md-3 mb-3" *ngFor="let movie of moviesOne">
                   <div class="card cart">
                       <a href="">
-                         <img class="img-fluid img" alt="100%x280" src="https://image.tmdb.org/t/p/w500/">
+                         <img class="img-fluid img" alt="100%x280" src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'>
 
                       </a>
                     <div class="card-body">
-                      <h4 class="card-title">ssss</h4>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <h6 class="card-title">{{movie.title}}</h6>
+                      <p class="card-text">{{(movie.overview.length>30)? (movie.overview|slice:0:23)+'...':(movie.overview) }}</p>
                       <div class="rat">
-                          <i class="fa fa-star-o" style="font-size:24px"></i>
-                          <span>5.6</span>
+                          <i class="fa fa-star-o" style="font-size:20px"></i>
+                          <span class="me-4">{{movie.vote_average}}</span>
+
+                          <span class="rat">
+                            <i class="fa fa-eye" style="font-size:20px"></i>
+                            <span>{{movie.vote_count}}</span>
+                         </span>
                       </div>
                     </div>
 
@@ -42,16 +47,51 @@
               </div>
             </div>
             
-            <div class="carousel-item">
-              <div class="row">
+            <div class="carousel-item" >
+              <div class="row" >
 
-                <div class="col-md-4 mb-3" *ngFor="let movie of movies">
-                  <div class="card">
-                    <img class="img-fluid" alt="100%x280" src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-0.3.5&amp;q=80&amp;fm=jpg&amp;crop=entropy&amp;cs=tinysrgb&amp;w=1080&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjMyMDc0fQ&amp;s=ee8417f0ea2a50d53a12665820b54e23">
+                <div class="col-md-3 mb-3" *ngFor="let movie of moviesTwo;">
+                  <div class="card cart" >
+                         <img class="img-fluid img" alt="100%x280" src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'>
                     <div class="card-body">
-                      <h4 class="card-title">{{movie.title}}</h4>
-                      <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                      <h6 class="card-title">{{movie.title}}</h6>
+                      <p class="card-text">{{(movie.overview.length>30)? (movie.overview|slice:0:23)+'...':(movie.overview) }}</p>
+                     <div class="rat">
+                          <i class="fa fa-star-o" style="font-size:20px"></i>
+                          <span>5.6</span>
 
+                          <span class="rat">
+                            <i class="fa fa-eye" style="font-size:20px"></i>
+                            <span>5.6</span>
+                         </span>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+            
+              </div>
+            </div>
+
+            <div class="carousel-item" >
+              <div class="row" >
+
+                <div class="col-md-3 mb-3" *ngFor="let movie of moviesThree;">
+                  <div class="card cart" >
+                         <img class="img-fluid img" alt="100%x280" src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'>
+                    <div class="card-body">
+                      <h6 class="card-title">{{movie.title}}</h6>
+                      <p class="card-text">{{(movie.overview.length>30)? (movie.overview|slice:0:23)+'...':(movie.overview) }}</p>
+                      <div class="rat">
+                          <i class="fa fa-star-o" style="font-size:20px"></i>
+                          <span>5.6</span>
+
+                          <span class="rat">
+                            <i class="fa fa-eye" style="font-size:20px"></i>
+                            <span>5.6</span>
+                         </span>
+                      </div>
+                     
                     </div>
 
                   </div>
