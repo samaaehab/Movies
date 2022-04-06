@@ -38,3 +38,21 @@
         border-radius: 10px;
 
 }
+.dar{
+    background-color: #2b2b31;
+}
+.bord {
+  border-top: 3px solid #df4e93;
+}
+.head{
+    padding-top: 2%;
+    height: 126px;
+    background-color: #28282E;
+    margin-bottom: 3%;
+}
+.typ{
+    color: #b5b5b7 !important;
+}
+.typ2{
+    color: #df4e93 !important;
+}

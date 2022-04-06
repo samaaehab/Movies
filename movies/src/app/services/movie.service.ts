@@ -11,5 +11,7 @@ export class MovieService {
   private url='https://api.themoviedb.org/3/';
   private api_key='?api_key=df78b1ec3c75fc176ed082a69aaa382c';
   public get() { return this._httpClient.get(this.url + `movie/popular`+this.api_key); }
+  public getTrending() { return this._httpClient.get(this.url + `trending/all/day`+this.api_key); }
+
 
 }

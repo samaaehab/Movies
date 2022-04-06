@@ -4,3 +4,6 @@
 li a {
   color: #cacacb !important;
 }
+.bord {
+  border-top: 3px solid #df4e93;
+}

@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
     moviesOne:any[]=[]
     moviesTwo:any[]=[]
     moviesThree:any[]=[]
+    trending:any[]=[]
 
 
 
@@ -39,6 +40,12 @@ export class HomeComponent implements OnInit {
 
        console.log(this.movies);
       });
+
+     this._movieService.getTrending().subscribe(
+       (res: any) => {
+         this.trending.push(res.results);
+          console.log(this.trending)
+      });  
     
   }
   

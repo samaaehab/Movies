@@ -58,11 +58,11 @@
                       <p class="card-text">{{(movie.overview.length>30)? (movie.overview|slice:0:23)+'...':(movie.overview) }}</p>
                      <div class="rat">
                           <i class="fa fa-star-o" style="font-size:20px"></i>
-                          <span>5.6</span>
+                          <span>{{movie.vote_average}}</span>
 
                           <span class="rat">
                             <i class="fa fa-eye" style="font-size:20px"></i>
-                            <span>5.6</span>
+                            <span>{{movie.vote_count}}</span>
                          </span>
                       </div>
                     </div>
@@ -84,11 +84,11 @@
                       <p class="card-text">{{(movie.overview.length>30)? (movie.overview|slice:0:23)+'...':(movie.overview) }}</p>
                       <div class="rat">
                           <i class="fa fa-star-o" style="font-size:20px"></i>
-                          <span>5.6</span>
+                          <span>{{movie.vote_average}}</span>
 
                           <span class="rat">
                             <i class="fa fa-eye" style="font-size:20px"></i>
-                            <span>5.6</span>
+                            <span>{{movie.vote_count}}</span>
                          </span>
                       </div>
                      
@@ -105,6 +105,144 @@
     </div>
   </div>
 </section>
+
+<!--end section-->
+
+
+<section class="content dar bord">
+	<div class="content__head head">
+		<div class="container">
+			<div class="row">
+				<div class="col-12">
+					<!-- content title -->
+					<h2 class="content__title mb-3 text-light">Now Trending</h2>
+					<!-- end content title -->
+
+					<!-- content tabs nav -->
+					<ul class="nav nav-tabs content__tabs" id="content__tabs" role="tablist" style="border-bottom-color: #28282E;">
+						<li class="nav-item" role="presentation">
+							<a class="nav-link active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">NEW RELEASES</a>
+						</li>
+
+						<li class="nav-item" role="presentation">
+							<a class="nav-link" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">MOVIES</a>
+						</li>
+
+						<li class="nav-item" role="presentation">
+							<a class="nav-link" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">TV SERIES</a>
+						</li>
+
+					
+					</ul>
+					<!-- end content tabs nav -->
+
+					<!-- content mobile tabs nav -->
+					<div class="content__mobile-tabs" id="content__mobile-tabs">
+						<div class="content__mobile-tabs-btn dropdown-toggle" role="navigation" id="mobile-tabs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<span></span>
+						</div>
+
+						<div class="content__mobile-tabs-menu dropdown-menu" aria-labelledby="mobile-tabs">
+							<ul class="nav nav-tabs" role="tablist">
+								<li class="nav-item"><a class="nav-link active" id="1-tab" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">NEW RELEASES</a></li>
+
+								<li class="nav-item"><a class="nav-link" id="2-tab" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">MOVIES</a></li>
+
+								<li class="nav-item"><a class="nav-link" id="3-tab" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">TV SERIES</a></li>
+
+							</ul>
+						</div>
+					</div>
+					<!-- end content mobile tabs nav -->
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<!-- content tabs -->
+		<div class="tab-content" id="myTabContent">
+			<div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="1-tab">
+				<div class="row row--grid">
+					<!-- card -->
+				  <div class="card mb-3 cart" style="max-width: 540px;" *ngFor="let item of trending[0]">
+            <div class="row g-0">
+              <div class="col-md-4">
+                  <img class="img-fluid img" alt="100%x280" src='https://image.tmdb.org/t/p/w500/{{item.poster_path}}'>
+              </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title text-light">{{item.original_name}}{{item.original_title}}</h5>
+                <div class="rat">
+                          <i class="fa fa-star-o" style="font-size:20px"></i>
+                          <span>5.6</span>
+                      </div>
+                <p class="card-text typ">{{(item.overview.length>30)? (item.overview|slice:0:150)+'...':(item.overview) }}</p>
+                <p class="card-text"><small class="text-muted typ2">{{item.media_type}},   <i class='fas fa-fire me-3'></i>  {{item.popularity}}</small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+			</div>
+		</div>
+
+			<div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="2-tab">
+				<div class="row row--grid">
+					<!-- card -->
+					<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+						<div class="card">
+							<a href="details1.html" class="card__cover">
+								<img src="img/covers/cover.jpg" alt="">
+								<span class="card__play">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"/></svg>
+								</span>
+							</a>
+							<div class="card__content">
+								<h3 class="card__title"><a href="#">I Dream in Another Language</a></h3>
+								<span class="card__category">
+									<a href="#">Action</a>
+									<a href="#">Triler</a>
+								</span>
+								<span class="card__rate">8.4</span>
+							</div>
+						</div>
+					</div>
+					<!-- end card -->
+
+				</div>
+			</div>
+
+			<div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="3-tab">
+				<div class="row row--grid">
+					<!-- card -->
+					<div class="col-6 col-sm-4 col-lg-3 col-xl-2">
+						<div class="card">
+							<a href="details1.html" class="card__cover">
+								<img src="img/covers/cover2.jpg" alt="">
+								<span class="card__play">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"/></svg>
+								</span>
+							</a>
+							<div class="card__content">
+								<h3 class="card__title"><a href="#">Benched</a></h3>
+								<span class="card__category">
+									<a href="#">Comedy</a>
+								</span>
+								<span class="card__rate">7.1</span>
+							</div>
+						</div>
+					</div>
+					<!-- end card -->
+
+				</div>
+			</div>
+
+		</div>
+		<!-- end content tabs -->
+	</div>
+</section>
+<!-- end content -->
 </div>
 
    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
