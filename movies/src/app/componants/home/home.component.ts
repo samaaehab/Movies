@@ -1,6 +1,7 @@
 import { Movie } from './../../models/Movie';
 import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/services/movie.service';
+import { TvService } from 'src/app/services/tv.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,11 +13,15 @@ export class HomeComponent implements OnInit {
     moviesOne:any[]=[]
     moviesTwo:any[]=[]
     moviesThree:any[]=[]
+    moviesFour:any[]=[]
     trending:any[]=[]
+    tvPopular:any[]=[]
+    tvOne:any[]=[]
 
 
 
-  constructor(private _movieService:MovieService) { }
+
+  constructor(private _movieService:MovieService,private _tvService:TvService) { }
 
   ngOnInit(): void {
     this._movieService.get().subscribe(
@@ -33,18 +38,34 @@ export class HomeComponent implements OnInit {
            else if(i<12){
               this.moviesThree.push(this.movies[i]);
            }
+           else{
+             this.moviesFour.push(this.movies[i]);
+           }
          }
-         console.log(this.moviesOne);
-         console.log(this.moviesTwo);
-         console.log(this.moviesThree);
+      //    console.log(this.moviesOne);
+      //    console.log(this.moviesTwo);
+      //    console.log(this.moviesThree);
 
-       console.log(this.movies);
+      //  console.log(this.moviesFour);
       });
 
      this._movieService.getTrending().subscribe(
        (res: any) => {
          this.trending.push(res.results);
           console.log(this.trending)
+      }); 
+      this._tvService.get().subscribe(
+       (res: any) => {
+           this.tvPopular=res.results;
+             for(let i=0;i<this.tvPopular.length;i++){
+              if(i<8){
+            this.tvOne.push(this.tvPopular[i]);
+           }
+
+         }
+        console.log(this.tvOne)
+
+
       });  
     
   }
