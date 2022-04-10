@@ -56,6 +56,14 @@
 .typ2{
     color: #df4e93 !important;
 }
+.btn-white {
+  border-radius: 50px;
+  color: #df4e93;
+  background-color: #fff;
+  padding: 8px 40px;
+  cursor: pointer;
+  border: 2px solid #df4e93 !important
+}
 .btn-white:hover {
   color: #fff;
   background-image: linear-gradient(to right,  #df5158, #df4e93)

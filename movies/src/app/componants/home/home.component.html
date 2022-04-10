@@ -23,7 +23,8 @@
 
                 <div class="col-md-3 mb-3" *ngFor="let movie of moviesOne">
                   <div class="card cart">
-                      <a href="">
+                  
+                      <a routerLink="/veiw/{{movie.id}}">
                          <img class="img-fluid img" alt="100%x280" src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'>
 
                       </a>
@@ -52,8 +53,11 @@
 
                 <div class="col-md-3 mb-3" *ngFor="let movie of moviesTwo;">
                   <div class="card cart" >
+
+                      <a routerLink="/veiw/{{movie.id}}">
                          <img class="img-fluid img" alt="100%x280" src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'>
-                    <div class="card-body">
+
+                      </a>                    <div class="card-body">
                       <h6 class="card-title">{{movie.title}}</h6>
                       <p class="card-text">{{(movie.overview.length>30)? (movie.overview|slice:0:23)+'...':(movie.overview) }}</p>
                      <div class="rat">
@@ -78,8 +82,10 @@
 
                 <div class="col-md-3 mb-3" *ngFor="let movie of moviesThree;">
                   <div class="card cart" >
+                     <a routerLink="/veiw/{{movie.id}}">
                          <img class="img-fluid img" alt="100%x280" src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'>
-                    <div class="card-body">
+
+                      </a>                    <div class="card-body">
                       <h6 class="card-title">{{movie.title}}</h6>
                       <p class="card-text">{{(movie.overview.length>30)? (movie.overview|slice:0:23)+'...':(movie.overview) }}</p>
                       <div class="rat">
@@ -196,7 +202,7 @@
               
               <div class="card-body">
                 <h6 class="card-title">{{movie.original_title}}</h6>
-                <button class="btn btn-white">Watch</button>
+                <a routerLink="/veiw/{{movie.id}}" class="btn btn-white">Watch</a>
               </div>
             </div>
 					</div>
@@ -214,7 +220,7 @@
               
               <div class="card-body">
                 <h6 class="card-title">{{tv.original_name}}</h6>
-                <button class="btn btn-white">Watch</button>
+                <a routerLink="/veiw/{{tv.id}}" class="btn btn-white">Watch</a>
               </div>
             </div>
 					</div>

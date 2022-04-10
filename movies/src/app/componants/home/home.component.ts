@@ -42,7 +42,7 @@ export class HomeComponent implements OnInit {
              this.moviesFour.push(this.movies[i]);
            }
          }
-      //    console.log(this.moviesOne);
+         console.log(this.moviesOne);
       //    console.log(this.moviesTwo);
       //    console.log(this.moviesThree);
 
