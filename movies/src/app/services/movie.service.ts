@@ -13,6 +13,7 @@ export class MovieService {
   public get() { return this._httpClient.get(this.url + `movie/popular`+this.api_key); }
   public getTrending() { return this._httpClient.get(this.url + `trending/all/day`+this.api_key); }
   public getDetails(id:number) { return this._httpClient.get(this.url + `movie/${id}`+this.api_key); }
+  public getMovieVedio(id:number) { return this._httpClient.get(this.url + `movie/${id}/videos`+this.api_key); }
 
 
 }

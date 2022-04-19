@@ -1,245 +1,270 @@
 <div class="bac">
-<div class="box">
-        <section class="pt-5 pb-2">
-  <div class="container">
-    <div class="row">
-      <div class="col-6">
-        <h3 class="mb-3 text-light">NEW ITEMS OF THIS SEASON </h3>
+  <div class="box">
+    <section class="pt-5 pb-2">
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h3 class="mb-3 text-light">NEW ITEMS OF THIS SEASON </h3>
+          </div>
+          <div class="col-6 text-right">
+            <a class="btn btn-primary mb-3 mr-1 arrow" href="#carouselExampleIndicators2" role="button"
+              data-slide="prev">
+              <i class="fa fa-arrow-left"></i>
+            </a>
+            <a class="btn btn-primary mb-3 arrow" href="#carouselExampleIndicators2" role="button" data-slide="next">
+              <i class="fa fa-arrow-right"></i>
+            </a>
+          </div>
+          <div class="col-12">
+            <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel">
+
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="row">
+
+                    <div class="col-md-3 mb-3" *ngFor="let movie of moviesOne">
+                      <div class="card cart">
+
+                        <a routerLink="/veiw/{{movie.id}}">
+                          <img class="img-fluid img" alt="100%x280"
+                            src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'>
+
+                        </a>
+                        <div class="card-body">
+                          <h6 class="card-title">{{movie.title}}</h6>
+                          <p class="card-text">
+                            {{(movie.overview.length>30)? (movie.overview|slice:0:23)+'...':(movie.overview) }}</p>
+                          <div class="rat">
+                            <i class="fa fa-star-o" style="font-size:20px"></i>
+                            <span class="me-4">{{movie.vote_average}}</span>
+
+                            <span class="rat">
+                              <i class="fa fa-eye" style="font-size:20px"></i>
+                              <span>{{movie.vote_count}}</span>
+                            </span>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="row">
+
+                    <div class="col-md-3 mb-3" *ngFor="let movie of moviesTwo;">
+                      <div class="card cart">
+
+                        <a routerLink="/veiw/{{movie.id}}">
+                          <img class="img-fluid img" alt="100%x280"
+                            src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'>
+
+                        </a>
+                        <div class="card-body">
+                          <h6 class="card-title">{{movie.title}}</h6>
+                          <p class="card-text">
+                            {{(movie.overview.length>30)? (movie.overview|slice:0:23)+'...':(movie.overview) }}</p>
+                          <div class="rat">
+                            <i class="fa fa-star-o" style="font-size:20px"></i>
+                            <span>{{movie.vote_average}}</span>
+
+                            <span class="rat">
+                              <i class="fa fa-eye" style="font-size:20px"></i>
+                              <span>{{movie.vote_count}}</span>
+                            </span>
+                          </div>
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+                <div class="carousel-item">
+                  <div class="row">
+
+                    <div class="col-md-3 mb-3" *ngFor="let movie of moviesThree;">
+                      <div class="card cart">
+                        <a routerLink="/veiw/{{movie.id}}">
+                          <img class="img-fluid img" alt="100%x280"
+                            src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'>
+
+                        </a>
+                        <div class="card-body">
+                          <h6 class="card-title">{{movie.title}}</h6>
+                          <p class="card-text">
+                            {{(movie.overview.length>30)? (movie.overview|slice:0:23)+'...':(movie.overview) }}</p>
+                          <div class="rat">
+                            <i class="fa fa-star-o" style="font-size:20px"></i>
+                            <span>{{movie.vote_average}}</span>
+
+                            <span class="rat">
+                              <i class="fa fa-eye" style="font-size:20px"></i>
+                              <span>{{movie.vote_count}}</span>
+                            </span>
+                          </div>
+
+                        </div>
+
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-6 text-right">
-        <a class="btn btn-primary mb-3 mr-1 arrow" href="#carouselExampleIndicators2" role="button" data-slide="prev">
-          <i class="fa fa-arrow-left"></i>
-        </a>
-        <a class="btn btn-primary mb-3 arrow" href="#carouselExampleIndicators2" role="button" data-slide="next">
-          <i class="fa fa-arrow-right"></i>
-        </a>
+    </section>
+
+    <!--end section-->
+
+
+    <section class="content dar bord">
+      <div class="content__head head">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <!-- content title -->
+              <h2 class="content__title mb-3 text-light">Now Trending</h2>
+              <!-- end content title -->
+
+              <!-- content tabs nav -->
+              <ul class="nav nav-tabs content__tabs" id="content__tabs" role="tablist"
+                style="border-bottom-color: #28282E;">
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1"
+                    aria-selected="true">NEW RELEASES</a>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2"
+                    aria-selected="false">MOVIES</a>
+                </li>
+
+                <li class="nav-item" role="presentation">
+                  <a class="nav-link" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3"
+                    aria-selected="false">TV SERIES</a>
+                </li>
+
+
+              </ul>
+              <!-- end content tabs nav -->
+
+              <!-- content mobile tabs nav -->
+              <div class="content__mobile-tabs" id="content__mobile-tabs">
+                <div class="content__mobile-tabs-btn dropdown-toggle" role="navigation" id="mobile-tabs"
+                  data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <span></span>
+                </div>
+
+                <div class="content__mobile-tabs-menu dropdown-menu" aria-labelledby="mobile-tabs">
+                  <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item"><a class="nav-link active" id="1-tab" data-toggle="tab" href="#tab-1"
+                        role="tab" aria-controls="tab-1" aria-selected="true">NEW RELEASES</a></li>
+
+                    <li class="nav-item"><a class="nav-link" id="2-tab" data-toggle="tab" href="#tab-2" role="tab"
+                        aria-controls="tab-2" aria-selected="false">MOVIES</a></li>
+
+                    <li class="nav-item"><a class="nav-link" id="3-tab" data-toggle="tab" href="#tab-3" role="tab"
+                        aria-controls="tab-3" aria-selected="false">TV SERIES</a></li>
+
+                  </ul>
+                </div>
+              </div>
+              <!-- end content mobile tabs nav -->
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="col-12">
-        <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" >
 
-          <div class="carousel-inner" >
-            <div class="carousel-item active" >
-              <div class="row">
-
-                <div class="col-md-3 mb-3" *ngFor="let movie of moviesOne">
-                  <div class="card cart">
-                  
-                      <a routerLink="/veiw/{{movie.id}}">
-                         <img class="img-fluid img" alt="100%x280" src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'>
-
-                      </a>
+      <div class="container">
+        <!-- content tabs -->
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="1-tab">
+            <div class="row row--grid">
+              <!-- card -->
+              <div class="card mb-3 cart" style="max-width: 540px;" *ngFor="let item of trending[0]">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img class="img-fluid img" alt="100%x280"
+                      src='https://image.tmdb.org/t/p/w500/{{item.poster_path}}'>
+                  </div>
+                  <div class="col-md-8">
                     <div class="card-body">
-                      <h6 class="card-title">{{movie.title}}</h6>
-                      <p class="card-text">{{(movie.overview.length>30)? (movie.overview|slice:0:23)+'...':(movie.overview) }}</p>
+                      <h5 class="card-title text-light">{{item.original_name}}{{item.original_title}}</h5>
                       <div class="rat">
-                          <i class="fa fa-star-o" style="font-size:20px"></i>
-                          <span class="me-4">{{movie.vote_average}}</span>
-
-                          <span class="rat">
-                            <i class="fa fa-eye" style="font-size:20px"></i>
-                            <span>{{movie.vote_count}}</span>
-                         </span>
+                        <i class="fa fa-star-o" style="font-size:20px"></i>
+                        <span>5.6</span>
                       </div>
+                      <p class="card-text typ">
+                        {{(item.overview.length>30)? (item.overview|slice:0:150)+'...':(item.overview) }}</p>
+                      <p class="card-text"><small class="text-muted typ2">{{item.media_type}}, <i
+                            class='fas fa-fire me-3'></i> {{item.popularity}}</small></p>
                     </div>
-
                   </div>
                 </div>
-
               </div>
-            </div>
-            
-            <div class="carousel-item" >
-              <div class="row" >
 
-                <div class="col-md-3 mb-3" *ngFor="let movie of moviesTwo;">
-                  <div class="card cart" >
-
-                      <a routerLink="/veiw/{{movie.id}}">
-                         <img class="img-fluid img" alt="100%x280" src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'>
-
-                      </a>                    <div class="card-body">
-                      <h6 class="card-title">{{movie.title}}</h6>
-                      <p class="card-text">{{(movie.overview.length>30)? (movie.overview|slice:0:23)+'...':(movie.overview) }}</p>
-                     <div class="rat">
-                          <i class="fa fa-star-o" style="font-size:20px"></i>
-                          <span>{{movie.vote_average}}</span>
-
-                          <span class="rat">
-                            <i class="fa fa-eye" style="font-size:20px"></i>
-                            <span>{{movie.vote_count}}</span>
-                         </span>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-            
-              </div>
-            </div>
-
-            <div class="carousel-item" >
-              <div class="row" >
-
-                <div class="col-md-3 mb-3" *ngFor="let movie of moviesThree;">
-                  <div class="card cart" >
-                     <a routerLink="/veiw/{{movie.id}}">
-                         <img class="img-fluid img" alt="100%x280" src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}'>
-
-                      </a>                    <div class="card-body">
-                      <h6 class="card-title">{{movie.title}}</h6>
-                      <p class="card-text">{{(movie.overview.length>30)? (movie.overview|slice:0:23)+'...':(movie.overview) }}</p>
-                      <div class="rat">
-                          <i class="fa fa-star-o" style="font-size:20px"></i>
-                          <span>{{movie.vote_average}}</span>
-
-                          <span class="rat">
-                            <i class="fa fa-eye" style="font-size:20px"></i>
-                            <span>{{movie.vote_count}}</span>
-                         </span>
-                      </div>
-                     
-                    </div>
-
-                  </div>
-                </div>
-            
-              </div>
             </div>
           </div>
+
+          <div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="2-tab">
+            <div class="row row--grid">
+              <!-- card -->
+              <div class="col-3 col-sm-3" *ngFor="let movie of moviesFour;">
+                <div class="card mb-3 cart text-light" style="width: 14rem;">
+                  <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' class="card-img-top img-fluid img"
+                    alt="100%x280">
+
+                  <div class="card-body">
+                    <h6 class="card-title">{{movie.title}}</h6>
+                    <a routerLink="/veiw/{{movie.id}}" class="btn btn-white">Watch</a>
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="3-tab">
+            <div class="row row--grid">
+              <!-- card -->
+              <div class="col-3 col-sm-3" *ngFor="let tv of tvOne;">
+                <div class="card mb-3 cart text-light" style="width: 14rem;">
+                  <img src='https://image.tmdb.org/t/p/w500/{{tv.poster_path}}' class="card-img-top img-fluid img"
+                    alt="100%x280">
+
+                  <div class="card-body">
+                    <h6 class="card-title">{{tv.name}}</h6>
+                    <a routerLink="/veiw/{{tv.id}}" class="btn btn-white">Watch</a>
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+
+            </div>
+          </div>
+
         </div>
+        <!-- end content tabs -->
       </div>
-    </div>
+    </section>
+    <!-- end content -->
   </div>
-</section>
 
-<!--end section-->
-
-
-<section class="content dar bord">
-	<div class="content__head head">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<!-- content title -->
-					<h2 class="content__title mb-3 text-light">Now Trending</h2>
-					<!-- end content title -->
-
-					<!-- content tabs nav -->
-					<ul class="nav nav-tabs content__tabs" id="content__tabs" role="tablist" style="border-bottom-color: #28282E;">
-						<li class="nav-item" role="presentation">
-							<a class="nav-link active" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">NEW RELEASES</a>
-						</li>
-
-						<li class="nav-item" role="presentation">
-							<a class="nav-link" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">MOVIES</a>
-						</li>
-
-						<li class="nav-item" role="presentation">
-							<a class="nav-link" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">TV SERIES</a>
-						</li>
-
-					
-					</ul>
-					<!-- end content tabs nav -->
-
-					<!-- content mobile tabs nav -->
-					<div class="content__mobile-tabs" id="content__mobile-tabs">
-						<div class="content__mobile-tabs-btn dropdown-toggle" role="navigation" id="mobile-tabs" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							<span></span>
-						</div>
-
-						<div class="content__mobile-tabs-menu dropdown-menu" aria-labelledby="mobile-tabs">
-							<ul class="nav nav-tabs" role="tablist">
-								<li class="nav-item"><a class="nav-link active" id="1-tab" data-toggle="tab" href="#tab-1" role="tab" aria-controls="tab-1" aria-selected="true">NEW RELEASES</a></li>
-
-								<li class="nav-item"><a class="nav-link" id="2-tab" data-toggle="tab" href="#tab-2" role="tab" aria-controls="tab-2" aria-selected="false">MOVIES</a></li>
-
-								<li class="nav-item"><a class="nav-link" id="3-tab" data-toggle="tab" href="#tab-3" role="tab" aria-controls="tab-3" aria-selected="false">TV SERIES</a></li>
-
-							</ul>
-						</div>
-					</div>
-					<!-- end content mobile tabs nav -->
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="container">
-		<!-- content tabs -->
-		<div class="tab-content" id="myTabContent">
-			<div class="tab-pane fade show active" id="tab-1" role="tabpanel" aria-labelledby="1-tab">
-				<div class="row row--grid">
-					<!-- card -->
-				  <div class="card mb-3 cart" style="max-width: 540px;" *ngFor="let item of trending[0]">
-            <div class="row g-0">
-              <div class="col-md-4">
-                  <img class="img-fluid img" alt="100%x280" src='https://image.tmdb.org/t/p/w500/{{item.poster_path}}'>
-              </div>
-            <div class="col-md-8">
-              <div class="card-body">
-                <h5 class="card-title text-light">{{item.original_name}}{{item.original_title}}</h5>
-                <div class="rat">
-                          <i class="fa fa-star-o" style="font-size:20px"></i>
-                          <span>5.6</span>
-                      </div>
-                <p class="card-text typ">{{(item.overview.length>30)? (item.overview|slice:0:150)+'...':(item.overview) }}</p>
-                <p class="card-text"><small class="text-muted typ2">{{item.media_type}},   <i class='fas fa-fire me-3'></i>  {{item.popularity}}</small></p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-			</div>
-		</div>
-
-			<div class="tab-pane fade" id="tab-2" role="tabpanel" aria-labelledby="2-tab">
-				<div class="row row--grid" >
-					<!-- card -->
-					<div class="col-3 col-sm-3" *ngFor="let movie of moviesFour;">
-						<div class="card mb-3 cart text-light" style="width: 14rem;" >
-              <img src='https://image.tmdb.org/t/p/w500/{{movie.poster_path}}' class="card-img-top img-fluid img" alt="100%x280">
-              
-              <div class="card-body">
-                <h6 class="card-title">{{movie.title}}</h6>
-                <a routerLink="/veiw/{{movie.id}}" class="btn btn-white">Watch</a>
-              </div>
-            </div>
-					</div>
-					<!-- end card -->
-
-				</div>
-			</div>
-
-			<div class="tab-pane fade" id="tab-3" role="tabpanel" aria-labelledby="3-tab">
-				<div class="row row--grid">
-					<!-- card -->
-					<div class="col-3 col-sm-3" *ngFor="let tv of tvOne;">
-						<div class="card mb-3 cart text-light" style="width: 14rem;" >
-              <img src='https://image.tmdb.org/t/p/w500/{{tv.poster_path}}' class="card-img-top img-fluid img" alt="100%x280">
-              
-              <div class="card-body">
-                <h6 class="card-title">{{tv.name}}</h6>
-                <a routerLink="/veiw/{{tv.id}}" class="btn btn-white">Watch</a>
-              </div>
-            </div>
-					</div>
-					<!-- end card -->
-
-				</div>
-			</div>
-
-		</div>
-		<!-- end content tabs -->
-	</div>
-</section>
-<!-- end content -->
-</div>
-
-   <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>     
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-<script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js">
+  </script>
+  <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
 </div>

@@ -9,6 +9,9 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ViewComponent implements OnInit {
   prodid:any;
+  movieDetail:any
+  movieVedio:any
+  videoPath="https://www.youtube.com/embed/"
   constructor(private _activatedRoute:ActivatedRoute,private _movieDetails:MovieService) { }
 
   ngOnInit(): void {
@@ -18,9 +21,16 @@ export class ViewComponent implements OnInit {
     });
     this._movieDetails.getDetails(this.prodid).subscribe(
       (res:any)=>{
-        console.log(res)
+        this.movieDetail=res;
+        console.log(this.movieDetail)
       });
-    console.log(this.prodid)
+    // console.log(this.prodid)
+    this._movieDetails.getMovieVedio(this.prodid).subscribe(
+      (res:any)=>{
+        this.movieVedio=res.results[0].key;
+        // console.log(this.movieVedio.key)
+        // $('#myframe').attr("src",this.videoPath+this.movieVedio)
+      });
 
   }
 

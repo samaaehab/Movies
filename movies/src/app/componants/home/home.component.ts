@@ -43,8 +43,8 @@ export class HomeComponent implements OnInit {
            }
          }
          console.log(this.moviesOne);
-      //    console.log(this.moviesTwo);
-      //    console.log(this.moviesThree);
+         console.log(this.moviesTwo);
+         console.log(this.moviesThree);
 
       //  console.log(this.moviesFour);
       });
